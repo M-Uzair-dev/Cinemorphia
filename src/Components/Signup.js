@@ -153,7 +153,7 @@ const Signup = () => {
               style={{ margin: "15px 0" }}
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              maxLength={11}
+              maxLength="11"
               placeholder="Name"
             />
             <input
