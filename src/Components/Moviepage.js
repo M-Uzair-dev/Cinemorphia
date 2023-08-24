@@ -36,25 +36,41 @@ const Moviepage = () => {
   const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
   const [reviewsloading, setReviewsloading] = useState(true);
+  const [errmsg, seterrmsg] = useState("");
+  const [showerrmsg, setShowerrmsg] = useState(false);
   const addreview = async () => {
     setReviewadding(true);
-    await addDoc(reviewssref, {
-      movieid: id,
-      name: name,
-      rating: userrating,
-      thought: com,
-      time: new Date().getTime(),
-    });
-    const adta = doc(db, "Movies", id);
-    await updateDoc(adta, {
-      rating: data.rating + userrating,
-      userrated: data.userrated + 1,
-    });
-    setReviewadding(false);
-    Swal.fire("Success!", "Your review has been successflly added", "success");
-    setCom("");
-    setUserrating(0);
-    setReviewadded(reviewadded + 1);
+    if (com == "") {
+      seterrmsg("Please enter your thought");
+      setReviewadding(false);
+      setShowerrmsg(true);
+    } else if (userrating == 0) {
+      seterrmsg("Please enter your rating");
+      setReviewadding(false);
+      setShowerrmsg(true);
+    } else {
+      await addDoc(reviewssref, {
+        movieid: id,
+        name: name,
+        rating: userrating,
+        thought: com,
+        time: new Date().getTime(),
+      });
+      const adta = doc(db, "Movies", id);
+      await updateDoc(adta, {
+        rating: data.rating + userrating,
+        userrated: data.userrated + 1,
+      });
+      setReviewadding(false);
+      Swal.fire(
+        "Success!",
+        "Your review has been successflly added",
+        "success"
+      );
+      setCom("");
+      setUserrating(0);
+      setReviewadded(reviewadded + 1);
+    }
   };
   useEffect(() => {
     const tempreview = localStorage.getItem("savedreview");
@@ -154,6 +170,11 @@ const Moviepage = () => {
                     setUserrating(newRating);
                   }}
                 />
+                {showerrmsg ? (
+                  <p style={{ margin: "15px 0", color: "red" }}>{errmsg}</p>
+                ) : (
+                  <></>
+                )}
                 {loggedIn ? (
                   reviewadding ? (
                     <button style={{ height: "40px", marginBottom: "20px" }}>
