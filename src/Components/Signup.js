@@ -32,6 +32,8 @@ const Signup = () => {
       callback: (response) => {},
     });
   };
+  const [errmsg, seterrmsg] = useState("");
+  const [showerrmsg, setShowerrmsg] = useState(false);
   const requestOTP = async () => {
     setLoading(true);
     const phone = form.phone;
@@ -43,38 +45,48 @@ const Signup = () => {
     const quer = query(userinfo, where("phone", "==", form.phone));
     const querysnapshot = await getDocs(quer);
     if (querysnapshot.empty) {
-      generateRecaptcha();
-      let appVerifier = window.recaptchaVerifier;
-      signInWithPhoneNumber(auth, `+92${form.phone}`, appVerifier)
-        .then((confirmationResult) => {
-          window.confirmationResult = confirmationResult;
-          let timerInterval;
-          Swal.fire({
-            title: "Wait!",
-            html: `Sending verification code to 0${form.phone}`,
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: () => {
-              Swal.showLoading();
-            },
-            willClose: () => {
-              clearInterval(timerInterval);
-            },
-          }).then((result) => {
-            if (result.dismiss === Swal.DismissReason.timer) {
-            }
+      if (form.name == "") {
+        seterrmsg("please enter a valid name");
+        setShowerrmsg(true);
+        setLoading(false);
+      } else if (form.password == "") {
+        seterrmsg("Please enter a valid Password");
+        setShowerrmsg(true);
+        setLoading(false);
+      } else {
+        generateRecaptcha();
+        let appVerifier = window.recaptchaVerifier;
+        signInWithPhoneNumber(auth, `+92${form.phone}`, appVerifier)
+          .then((confirmationResult) => {
+            window.confirmationResult = confirmationResult;
+            let timerInterval;
+            Swal.fire({
+              title: "Wait!",
+              html: `Sending verification code to 0${form.phone}`,
+              timer: 2000,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading();
+              },
+              willClose: () => {
+                clearInterval(timerInterval);
+              },
+            }).then((result) => {
+              if (result.dismiss === Swal.DismissReason.timer) {
+              }
+            });
+            setLoading(false);
+            setotpreq(false);
+          })
+          .catch((error) => {
+            Swal.fire(
+              "Error!",
+              "Due to high demand, our OTP servers are currently busy. Please try again later",
+              "error"
+            );
+            setLoading(false);
           });
-          setLoading(false);
-          setotpreq(false);
-        })
-        .catch((error) => {
-          Swal.fire(
-            "Error!",
-            "Due to high demand, our OTP servers are currently busy. Please try again later",
-            "error"
-          );
-          setLoading(false);
-        });
+      }
     } else {
       Swal.fire(
         "Error!",
@@ -174,6 +186,11 @@ const Signup = () => {
                 login
               </Link>
             </p>
+            {showerrmsg ? (
+              <p style={{ margin: "0", color: "red" }}>{errmsg}</p>
+            ) : (
+              <></>
+            )}
 
             {loading ? (
               <button style={{ height: "40px", marginBottom: "20px" }}>
