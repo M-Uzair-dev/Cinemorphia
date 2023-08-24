@@ -1,0 +1,104 @@
+.navbar {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  height: 5vh;
+  margin-top: 4vh;
+  align-items: center;
+  justify-content: space-between;
+}
+.rightarea {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  font-weight: 400;
+  margin-right: 10px;
+}
+.navlogbtn {
+  background-color: var(--primary-color);
+  height: 44px;
+  width: 150px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin: 0 0 0 3vw;
+  color: rgba(12, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+.link {
+  text-decoration: none;
+}
+.navlogbtn:hover {
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+}
+.usericon {
+  margin-right: 3px;
+  height: 1.5em;
+}
+.searchbar {
+  margin: 0;
+  height: 42px;
+  width: 15vw;
+  border: none;
+  font-size: 17px;
+  background-color: transparent;
+  flex: 1;
+  outline: none;
+  color: white;
+  padding-left: 10px;
+  min-width: 200px;
+}
+.searchbar::placeholder {
+  color: var(--primary-color);
+}
+.searchdiv {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  padding: 1px 0;
+  max-width: 400px;
+}
+.searchicon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-weight: 400;
+}
+.rightarea link {
+  text-decoration: none;
+}
+@media (max-width: 950px) {
+  .navlogbtn {
+    display: none;
+  }
+  .searchbar,
+  .serchdiv {
+    touch-action: manipulation;
+  }
+}
+@media (max-width: 551px) {
+  .navbar {
+    flex-direction: column;
+    margin-top: 1vh;
+    align-items: center;
+  }
+  .searchdiv {
+    width: 200px;
+  }
+  .searchdiv {
+    z-index: 1000;
+  }
+  .searchbar {
+    min-width: 150px;
+  }
+}

@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(12, 0, 0, 1);
+  color: white;
+  overflow-x: hidden;
+  --primary-color: rgba(255, 145, 0, 0.822);
+  --secondary-color: rgba(255, 145, 0, 0.295);
+}

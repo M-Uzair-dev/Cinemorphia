@@ -1,0 +1,162 @@
+.maindiv {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.content {
+  width: 40vw;
+  margin-left: 20px;
+  max-width: 500px;
+  min-width: 450px;
+  margin-top: 15vh;
+}
+.mainimage {
+  height: 70vh;
+  margin-left: 20px;
+  max-height: 500px;
+  margin-top: 15vh;
+}
+.content h1 span {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.514);
+}
+.content h1 {
+  margin: 0 0 10px 0;
+  font-size: 35px;
+}
+.comentinput {
+  width: 28vw;
+  height: 45px;
+  font-size: 15px;
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  outline: none;
+  color: white;
+  padding: 0 20px;
+  max-width: 400px;
+  min-width: 300px;
+  margin: 25px 0 5px 0;
+}
+.comentstars {
+  margin: 10px 0;
+  font-size: 20px;
+}
+.mainstars {
+  font-size: 25px;
+}
+.postbutton,
+.downloadbutton {
+  width: 170px;
+  height: 40px;
+  font-size: 17px;
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  margin: 5px 0 10px 0;
+  transition: 0.2s all ease;
+}
+.postbutton:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+.downloadbutton:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+.comment {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.comment * {
+  margin: 2px;
+}
+.commentname {
+  font-size: 16px;
+}
+.commentdate {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.411);
+}
+.comentedstars {
+  margin: 0 2px;
+}
+.backbutton {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+  position: absolute;
+  top: 7vh;
+  width: 200px;
+  left: 10vh;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+.maindiv input {
+  margin: 30px 0;
+}
+@media (max-width: 1000px) {
+  .maindiv {
+    justify-content: start;
+  }
+  .mainimage {
+    height: 450px;
+    margin-left: 5vh;
+  }
+}
+@media (max-width: 840px) {
+  .maindiv {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin-top: 13vh;
+  }
+  .mainimage {
+    margin: 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 0 0;
+    text-align: center;
+    width: 80vw;
+    min-width: 0px;
+  }
+  .endiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .comentinput {
+    min-width: 230px;
+  }
+  .postbutton {
+    margin-bottom: 30px;
+  }
+  .backbutton {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+    position: absolute;
+    top: 4vh;
+    left: 4vh;
+    cursor: pointer;
+  }
+  .comment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 90%;
+  }
+}
+@media (max-width: 425px) {
+  .mainimage {
+    height: 400px;
+    display: flex;
+  }
+}

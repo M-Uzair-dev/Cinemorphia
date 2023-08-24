@@ -1,0 +1,132 @@
+.card {
+  height: 400px;
+  width: 300px;
+  overflow: hidden;
+  margin: 25px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.cardimage {
+  height: 400px;
+  cursor: pointer;
+}
+.cardsection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 94vw;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.trendingmoviesheading {
+  display: inline;
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-color);
+  margin: 50px 0;
+}
+.categoriesdiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  height: 20vh;
+}
+.divofcat {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.divofcat h3 {
+  font-weight: 400;
+  user-select: none;
+  cursor: pointer;
+  margin: 0 15px;
+  transition: all 0.4s ease;
+}
+.divofcat h3:hover {
+  transform: translateY(-2px);
+}
+.cardsec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.addbutton {
+  background-color: var(--primary-color);
+  height: 44px;
+  width: 150px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  color: rgba(12, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 5px 0 30px 0;
+}
+.addbutton:hover {
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+}
+.cardtext {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(transparent black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  padding-bottom: 20px;
+  color: white;
+  width: 100%;
+  background: linear-gradient(rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.74));
+  text-align: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.cardtext:hover {
+  opacity: 100;
+}
+.cardtext h3 {
+  font-weight: 400;
+  width: 80%;
+  margin: 10px 0;
+}
+.cardtext h3 span {
+  color: rgba(255, 255, 255, 0.699);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (max-width: 452px) {
+  .trendingmoviesheading {
+    font-size: 25px;
+  }
+}
+@media (max-width: 565px) {
+  .divofcat {
+    flex-direction: column;
+  }
+  .categoriesdiv {
+    height: auto;
+    padding: 10px 0;
+  }
+  .divofcat h3 {
+    margin: 15px 0;
+  }
+}

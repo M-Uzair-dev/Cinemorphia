@@ -1,0 +1,30 @@
+.searchpage {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.searchpage input {
+  max-width: 300px;
+}
+.searchpage h1 {
+  margin: 30px 0 10px 0;
+  text-align: center;
+}
+.searchpage span {
+  color: var(--primary-color);
+}
+.searchdiv {
+  margin: 20px 0;
+}
+.searchpage h4 {
+  text-align: center;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 20px;
+}
+@media (max-width: 762px) {
+  .searchpage {
+    margin-top: 100px;
+  }
+}

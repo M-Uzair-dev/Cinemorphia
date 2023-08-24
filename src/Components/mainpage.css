@@ -1,0 +1,128 @@
+.logbtn {
+  background-color: var(--primary-color);
+  height: 44px;
+  width: 150px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  color: rgba(12, 0, 0, 1);
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  display: none;
+  transition: 0.2s all ease;
+}
+.logbtn:hover {
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+}
+.usericon {
+  margin-right: 3px;
+  height: 1.5em;
+}
+.mainpage {
+  height: 91vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.h1 {
+  color: rgba(235, 222, 81, 0.884);
+  font-size: 33px;
+  margin: 0 0 25px 0;
+}
+.leftside {
+  width: 50%;
+  margin-left: 5%;
+  max-width: 600px;
+}
+.pic {
+  right: 0;
+  z-index: -1;
+  position: absolute;
+  top: 9vh;
+  right: 0;
+  height: 91vh;
+  opacity: 80%;
+}
+.para {
+  margin: 35px 0;
+  line-height: 21px;
+}
+.h1 span {
+  color: var(--primary-color);
+}
+@media (max-width: 1240px) {
+  .h1 {
+    font-size: 30px;
+  }
+  .para {
+    font-size: 20px;
+    line-height: 16px;
+    margin: 10px 0 30px 0;
+  }
+  .pic {
+    opacity: 60%;
+  }
+}
+@media (max-width: 1181px) {
+  .pic {
+    opacity: 40%;
+  }
+}
+@media (max-width: 955px) {
+  .leftside {
+    margin: auto;
+    display: flex;
+    width: 90vw;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .para {
+    font-size: 18px;
+  }
+  @media (min-height: 1000px) {
+    .h1 {
+      font-size: 35px;
+    }
+    .para {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 950px) {
+  .logbtn {
+    display: inline;
+  }
+}
+@media (max-width: 658px) {
+  .leftside {
+    width: 92vw;
+    height: 110vh;
+    justify-content: center;
+  }
+}
+@media (max-width: 658px) {
+  .para {
+    font-size: 16px;
+  }
+  @media (min-height: 1000px) {
+    .para {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 457px) {
+  .h1 {
+    font-size: 30px;
+  }
+  .para {
+    font-size: 14px;
+  }
+}
