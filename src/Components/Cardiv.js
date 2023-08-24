@@ -76,7 +76,7 @@ const Cardiv = () => {
                   activeTab === "Action" ? "var(--primary-color)" : "inherit",
               }}
             >
-              ACTON
+              ACTION
             </h3>
             <h3
               onClick={() => {
