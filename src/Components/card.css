@@ -1,7 +1,7 @@
 .card {
   height: 400px;
   width: 300px;
-  overflow: hidden;
+/*   overflow: hidden; */
   margin: 25px 20px;
   display: flex;
   align-items: center;
