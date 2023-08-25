@@ -1,7 +1,7 @@
 .card {
   height: 400px;
   width: 300px;
-/*   overflow: hidden; */
+  overflow: hidden;
   margin: 25px 20px;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
   position: relative;
 }
 .cardimage {
-  width: 300px; 
+  height: 400px;
   cursor: pointer;
 }
 .cardsection {
