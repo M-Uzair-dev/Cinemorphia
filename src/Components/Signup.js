@@ -177,11 +177,13 @@ const Signup = () => {
                 margin: "5px 0 0 0",
               }}
             >
-              Please enter your real phone number because <br /> the login code
+              The otp service only works for Pakistani numbers <br /> So if you have a pakistani number, You can use it. <br/> But, If you do not have a Pakistani number, You can use <br/> Phone : 1234 <br/> Password : abc <br/> To <Link style={{ color: "rgb(25, 158, 224)" }} to={"/login"}>
+                login
+              </Link> from the the demo account to use all the features.
               will be sent to this number
             </p>
             <p>
-              already have a account ?{" "}
+              already have an account ?{" "}
               <Link style={{ color: "rgb(25, 158, 224)" }} to={"/login"}>
                 login
               </Link>
